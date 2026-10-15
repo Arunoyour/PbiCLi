@@ -1,0 +1,17 @@
+Hi all,
+
+I'd like to share a proposal for how we rebuild BRDs for the client's existing systems, where pipelines, stored procedures and tables exist but the business requirements were never documented.
+
+The idea in brief:
+- An AI agent, run in VS Code with GitHub Copilot, first builds a "memory" of the system from everything we have: implementation docs, slides, spreadsheets, pipeline definitions, stored procedures and tables (read-only via Databricks Genie where available), and the BRDs the team has already drafted.
+- Using that memory, it builds one BRD phase by phase: summary, scope, process analysis, business rules, technical analysis, Genie and DevOps evidence, gap analysis, clarification, assumptions and risks, and finally the draft BRD in the client's template.
+- A person reviews every phase in a browser page and must approve it before the agent moves on.
+- Every statement in the BRD is labelled Confirmed, From evidence, Inferred or Conflicting, and every BRD shows the memory version it was built on, so it is always clear what has been signed off.
+- Access to client data is read-only throughout, and no credentials are exposed.
+
+The attached PDF has the full flow diagram, how each step works, the safeguards, what we need to get started, and the limits we should be aware of. You can also view it online here: [link]
+
+I'd welcome your feedback, and a go-ahead to build and pilot it on one BRD.
+
+Thanks,
+[Your name]
